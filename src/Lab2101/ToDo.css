@@ -1,0 +1,44 @@
+/* Whole page */
+.todo-page {
+    min-height: 100vh;
+    background-color: #f4f6f8;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* Title */
+.todo-page h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Inputs */
+.todo-page input {
+    padding: 8px;
+    width: 250px;
+    margin: 5px 0;
+}
+
+/* Buttons */
+.todo-page button {
+    padding: 8px 14px;
+    margin: 5px;
+    border: none;
+    background-color: #1976d2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-page button:hover {
+    background-color: #125aa0;
+}
+
+/* Task items */
+.task {
+    background-color: #e3f2fd;
+    padding: 10px;
+    margin: 6px auto;
+    width: 300px;
+    border-radius: 6px;
+}
