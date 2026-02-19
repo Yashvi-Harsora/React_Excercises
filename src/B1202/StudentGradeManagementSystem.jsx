@@ -22,7 +22,7 @@ form handling, and component organization.
    - Edit existing grades for students
    - Recalculate average when grades change
 3. **Grade Statistics:**
-   - Display overall class average
+   - Display overall class average -- done
    - Show highest and lowest grades
    - Count students in each grade letter category -- done
 #### Part 3: Filtering and Sorting
@@ -125,6 +125,17 @@ const classAvg=()=>{
         return avg;
     
 }
+//highest of the class
+const countHigh=()=>{
+    let highest=Math.max(...sList.map(student=>Number(student.avg)))
+    return highest;
+}
+
+//lowest of the class
+const countLow=()=>{
+     let lowest=Math.min(...sList.map(student=>Number(student.avg)))
+    return lowest;
+}
 
     return(
         <>
@@ -170,7 +181,12 @@ const classAvg=()=>{
             <h3>class average </h3>
             <p>Class Average: {classAvg()}</p>
         </div>
-
+        <div className="display-high-low">
+            <h3>Highest & the lowest</h3>
+            <p>Highest: {countHigh()}<br/>
+               Lowest: {countLow()}
+            </p>
+        </div>
         
         </>
     )
