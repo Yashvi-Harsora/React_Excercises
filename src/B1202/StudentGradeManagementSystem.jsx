@@ -36,6 +36,8 @@ form handling, and component organization.
 
 
 import React,{useState} from "react";
+import "./StudentManagement.css";
+
 export default function StudentManagement(){
     const [sList,setsList]=useState([
         {
@@ -138,7 +140,9 @@ const countLow=()=>{
 }
 
     return(
+        
         <>
+        <div className="container">
         {/* search input box */}
         <div className="input">
             <input type="text" name="name" id={sList.id} placeholder="search by name" onChange={(e)=>setSearchItem(e.target.value)}/>
@@ -186,6 +190,7 @@ const countLow=()=>{
             <p>Highest: {countHigh()}<br/>
                Lowest: {countLow()}
             </p>
+        </div>
         </div>
         
         </>
