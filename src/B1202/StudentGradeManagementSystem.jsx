@@ -24,10 +24,10 @@ form handling, and component organization.
 3. **Grade Statistics:**
    - Display overall class average
    - Show highest and lowest grades
-   - Count students in each grade letter category
+   - Count students in each grade letter category -- done
 #### Part 3: Filtering and Sorting
-1. **Filter Students:**
-   - Filter by name (search functionality)
+1. **Filter Students:** -- done
+   - Filter by name (search functionality) -- done
 2. **Sort Students:**
    - Sort by name (A-Z, Z-A)
  */
@@ -113,7 +113,18 @@ export default function StudentManagement(){
         })
     );
 };
-
+//display class avg
+const classAvg=()=>{
+    let avg;
+    let sum=sList.reduce((sum,student)=>{
+        sum=sum+Number(student.avg);
+        return sum;
+    },0 );
+    
+    avg=(sum/sList.length).toFixed(2);
+        return avg;
+    
+}
 
     return(
         <>
@@ -154,6 +165,12 @@ export default function StudentManagement(){
             <button onClick={handleAdd}>Add New Student</button>
         </div>
         <hr/>
+
+        <div className="display-overall-class-avg">
+            <h3>class average </h3>
+            <p>Class Average: {classAvg()}</p>
+        </div>
+
         
         </>
     )
